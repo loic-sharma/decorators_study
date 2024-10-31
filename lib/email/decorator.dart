@@ -67,14 +67,10 @@ class EmailPage extends StatelessWidget {
               ],
             ),
 
-            trailing: Icon(Icons.more_vert)
-              .padding(padding: const EdgeInsets.all(8.0))
-              .decoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  shape: BoxShape.circle,
-                ),
-              ),
+            trailing: IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {},
+            ),
           ),
         );
       },

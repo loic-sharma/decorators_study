@@ -34,6 +34,7 @@ class _MyButtonState extends State<MyButton> {
         decoration: BoxDecoration(
           color: _isHovering ? Colors.orange : Colors.amber,
           borderRadius: const BorderRadius.all(Radius.circular(10)),
+          border: Border.all(),
           boxShadow: const <BoxShadow>[
             BoxShadow(
               color: Colors.black12,
