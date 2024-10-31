@@ -1,87 +1,83 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Email app'),
+        ),
+        body: const EmailPage(),
+      ),
+    ),
+  );
+}
+
+class Email {
+  Email({required this.subject, required this.sender});
+
+  final String sender;
+  final String subject;
 }
 
 final emails = [
-  (
-    subject: 'Hello world',
-    sender: 'Foo Bar',
-    initials: 'FB',
+  Email(
+    sender: 'FN',
+    subject: 'Need flour?',
   ),
-  (
-    subject: 'Delicious ice cream!',
-    sender: 'Happy Customer',
-    initials: 'HC',
-  )
+  Email(
+    sender: 'HC',
+    subject: 'Thank you for the coffee!',
+  ),
 ];
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class EmailPage extends StatelessWidget {
+  const EmailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Email app'),
-      ),
-
-      body: ListView.builder(
-        itemCount: emails.length,
-        itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              leading: Text(emails[index].initials)
-                .padding(padding: EdgeInsets.all(16.0))
-                .decoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple.shade100,
-                    shape: BoxShape.circle,
-                  ),
+    return ListView.builder(
+      itemCount: emails.length,
+      itemBuilder: (context, index) {
+        return Card(
+          child: ListTile(
+            leading: Text(emails[index].sender)
+              .padding(padding: EdgeInsets.all(16.0))
+              .decoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple.shade100,
+                  shape: BoxShape.circle,
                 ),
-
-              title: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                spacing: 8.0,
-                children: [
-                  Text('Unread')
-                    .padding(padding: EdgeInsets.all(8.0))
-                    .decoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.amber.shade300,
-                        borderRadius: BorderRadius.circular(8.0)
-                      ),
-                    ),
-
-                  Text(emails[index].subject),
-                ],
               ),
 
-              trailing: Icon(Icons.more_vert)
-                .padding(padding: const EdgeInsets.all(8.0))
-                .decoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    shape: BoxShape.circle,
+            title: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 8.0,
+              children: [
+                Text('Unread')
+                  .padding(padding: EdgeInsets.all(8.0))
+                  .decoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.amber.shade300,
+                      borderRadius: BorderRadius.circular(8.0)
+                    ),
                   ),
-                ),
+
+                Text(emails[index].subject),
+              ],
             ),
-          );
-        },
-      ),
+
+            trailing: Icon(Icons.more_vert)
+              .padding(padding: const EdgeInsets.all(8.0))
+              .decoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  shape: BoxShape.circle,
+                ),
+              ),
+          ),
+        );
+      },
     );
   }
 }
