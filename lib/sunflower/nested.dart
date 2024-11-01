@@ -65,14 +65,14 @@ class _SunflowerState extends State<Sunflower> {
 }
 
 class SunflowerWidget extends StatelessWidget {
-  static const tau = math.pi * 2;
-  static const scaleFactor = 1 / 40;
-  static final phi = (math.sqrt(5) + 1) / 2;
-  static final rng = math.Random();
+  const SunflowerWidget(this.seeds, {super.key});
+
+  static const double tau = math.pi * 2;
+  static const double scaleFactor = 1 / 40;
+  static final double phi = (math.sqrt(5) + 1) / 2;
+  static final math.Random rng = math.Random();
 
   final int seeds;
-
-  const SunflowerWidget(this.seeds, {super.key});
 
   @override
   Widget build(BuildContext context) {
