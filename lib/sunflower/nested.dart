@@ -67,7 +67,6 @@ class _SunflowerState extends State<Sunflower> {
 class SunflowerWidget extends StatelessWidget {
   static const tau = math.pi * 2;
   static const scaleFactor = 1 / 40;
-  static const size = 600.0;
   static final phi = (math.sqrt(5) + 1) / 2;
   static final rng = math.Random();
 
@@ -108,7 +107,7 @@ class SunflowerWidget extends StatelessWidget {
     return FittedBox(
       fit: BoxFit.contain,
       child: SizedBox.square(
-        dimension: size,
+        dimension: 600.0,
         child: Stack(children: seedWidgets),
       ),
     );
@@ -116,9 +115,6 @@ class SunflowerWidget extends StatelessWidget {
 }
 
 class Seed extends StatelessWidget {
-  static const size = 5.0;
-  static const radius = 3.0;
-
   const Seed({super.key, required this.lit});
 
   final bool lit;
@@ -128,9 +124,9 @@ class Seed extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: lit ? Colors.orange : Colors.grey.shade700,
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: BorderRadius.circular(3.0),
       ),
-      child: const SizedBox.square(dimension: size),
+      child: const SizedBox.square(dimension: 5.0),
     );
   }
 }
