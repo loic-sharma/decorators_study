@@ -49,7 +49,7 @@ class EmailPage extends StatelessWidget {
               ),
               child: Padding(
                 padding: EdgeInsets.all(16.0),
-                child: Text(emails[index].sender)
+                child: Text(emails[index].sender),
               ),
             ),
 
@@ -60,7 +60,7 @@ class EmailPage extends StatelessWidget {
                 DecoratedBox(
                   decoration: BoxDecoration(
                     color: Colors.amber.shade300,
-                    borderRadius: BorderRadius.circular(8.0)
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
                     padding: EdgeInsets.all(8.0),

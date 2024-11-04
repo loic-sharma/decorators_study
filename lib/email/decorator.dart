@@ -59,7 +59,7 @@ class EmailPage extends StatelessWidget {
                   .decoratedBox(
                     decoration: BoxDecoration(
                       color: Colors.amber.shade300,
-                      borderRadius: BorderRadius.circular(8.0)
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
 
