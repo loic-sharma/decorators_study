@@ -31,7 +31,6 @@ final emails = [
   ),
 ];
 
-
 class EmailPage extends StatelessWidget {
   const EmailPage({super.key});
 
@@ -52,7 +51,6 @@ class EmailPage extends StatelessWidget {
                 child: Text(emails[index].sender),
               ),
             ),
-
             title: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               spacing: 8.0,
@@ -67,11 +65,9 @@ class EmailPage extends StatelessWidget {
                     child: Text('Unread'),
                   ),
                 ),
-
                 Text(emails[index].subject),
               ],
             ),
-
             trailing: IconButton(
               icon: Icon(Icons.delete),
               onPressed: () {},

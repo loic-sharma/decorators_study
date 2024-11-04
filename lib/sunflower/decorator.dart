@@ -38,11 +38,8 @@ class _SunflowerState extends State<Sunflower> {
           spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SunflowerWidget(seeds)
-              .expanded(),
-
+            SunflowerWidget(seeds).expanded(),
             Text('Showing ${seeds.round()} seeds'),
-
             Slider(
               min: 1,
               max: maxSeeds.toDouble(),
@@ -50,11 +47,9 @@ class _SunflowerState extends State<Sunflower> {
               onChanged: (val) {
                 setState(() => seeds = val.round());
               },
-            )
-            .sizedBox(width: 300),
+            ).sizedBox(width: 300),
           ],
-        )
-        .center(),
+        ).center(),
       ),
     );
   }
@@ -79,13 +74,12 @@ class SunflowerWidget extends StatelessWidget {
       final r = math.sqrt(i) * scaleFactor;
 
       seedWidgets.add(
-        const Seed(lit: true)
-          .animatedAlign(
-            key: ValueKey(i),
-            duration: Duration(milliseconds: rng.nextInt(500) + 250),
-            curve: Curves.easeInOut,
-            alignment: Alignment(r * math.cos(theta), -1 * r * math.sin(theta)),
-          ),
+        const Seed(lit: true).animatedAlign(
+          key: ValueKey(i),
+          duration: Duration(milliseconds: rng.nextInt(500) + 250),
+          curve: Curves.easeInOut,
+          alignment: Alignment(r * math.cos(theta), -1 * r * math.sin(theta)),
+        ),
       );
     }
 
@@ -94,19 +88,18 @@ class SunflowerWidget extends StatelessWidget {
       final y = math.sin(tau * j / (maxSeeds - 1)) * 0.9;
 
       seedWidgets.add(
-        const Seed(lit: false)
-          .animatedAlign(
-            key: ValueKey(j),
-            duration: Duration(milliseconds: rng.nextInt(500) + 250),
-            curve: Curves.easeInOut,
-            alignment: Alignment(x, y),
-          ),
+        const Seed(lit: false).animatedAlign(
+          key: ValueKey(j),
+          duration: Duration(milliseconds: rng.nextInt(500) + 250),
+          curve: Curves.easeInOut,
+          alignment: Alignment(x, y),
+        ),
       );
     }
 
     return Stack(children: seedWidgets)
-      .sizedBoxSquare(dimension: 600.0)
-      .fittedBox(fit: BoxFit.contain);
+        .sizedBoxSquare(dimension: 600.0)
+        .fittedBox(fit: BoxFit.contain);
   }
 }
 
@@ -117,12 +110,11 @@ class Seed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox.square(dimension: 5.0)
-      .decoratedBox(
-        decoration: BoxDecoration(
-          color: lit ? Colors.orange : Colors.grey.shade700,
-          borderRadius: BorderRadius.circular(3.0),
-        ),
-      );
+    return const SizedBox.square(dimension: 5.0).decoratedBox(
+      decoration: BoxDecoration(
+        color: lit ? Colors.orange : Colors.grey.shade700,
+        borderRadius: BorderRadius.circular(3.0),
+      ),
+    );
   }
 }

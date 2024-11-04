@@ -42,9 +42,7 @@ class _SunflowerState extends State<Sunflower> {
               Expanded(
                 child: SunflowerWidget(seeds),
               ),
-
               Text('Showing ${seeds.round()} seeds'),
-
               SizedBox(
                 width: 300,
                 child: Slider(

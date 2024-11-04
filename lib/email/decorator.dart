@@ -42,31 +42,28 @@ class EmailPage extends StatelessWidget {
         return Card(
           child: ListTile(
             leading: Text(emails[index].sender)
-              .padding(padding: EdgeInsets.all(16.0))
-              .decoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade100,
-                  shape: BoxShape.circle,
+                .padding(padding: EdgeInsets.all(16.0))
+                .decoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple.shade100,
+                    shape: BoxShape.circle,
+                  ),
                 ),
-              ),
-
             title: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               spacing: 8.0,
               children: [
                 Text('Unread')
-                  .padding(padding: EdgeInsets.all(8.0))
-                  .decoratedBox(
-                    decoration: BoxDecoration(
-                      color: Colors.amber.shade300,
-                      borderRadius: BorderRadius.circular(8.0),
+                    .padding(padding: EdgeInsets.all(8.0))
+                    .decoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.amber.shade300,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                     ),
-                  ),
-
                 Text(emails[index].subject),
               ],
             ),
-
             trailing: IconButton(
               icon: Icon(Icons.delete),
               onPressed: () {},
