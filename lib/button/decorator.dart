@@ -44,7 +44,13 @@ class _MyButtonState extends State<MyButton> {
           ],
         ),
       )
-      .gestureDetector(onTap: () => debugPrint('Hello world'))
+      .gestureDetector(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Button clicked!')),
+          );
+        },
+      )
       .mouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: (event) => setState(() => _isHovering = true),
