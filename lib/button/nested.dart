@@ -28,7 +28,11 @@ class _MyButtonState extends State<MyButton> {
         onEnter: (event) => setState(() => _isHovering = true),
         onExit: (event) => setState(() => _isHovering = false),
         child: GestureDetector(
-          onTap: () => debugPrint('Hello world'),
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Button clicked!')),
+            );
+          },
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 500),
             decoration: BoxDecoration(
