@@ -10,9 +10,9 @@
         mkdir "$out"
         cp -a -rf ${./.}/. "$out/"
         chmod -R +w "$out"
-        # rm "$out/idx-template.nix"
-        # rm "$out/idx-template.json"
-        # rm "$out/dev.nix"
+        rm "$out/idx-template.nix"
+        rm "$out/idx-template.json"
+        rm "$out/dev.nix"
         mkdir -p "$out/flutter"
         git clone "${repo}" "$out/flutter/"
         mkdir "$out"/.idx
