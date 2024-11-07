@@ -8,9 +8,8 @@
     ];
     bootstrap = ''
         mkdir "$out"
-        cp -rf ${./.} "$WS_NAME"
-        chmod -R +w "$WS_NAME"
-        mv "$WS_NAME" "$out/"
+        cp -rf ${./.} "$out/"
+        chmod -R +w "$out"
         # rm "$out/idx-template.nix"
         # rm "$out/idx-template.json"
         # rm "$out/dev.nix"
