@@ -14,7 +14,7 @@
         rm "$out/idx-template.json"
         rm "$out/dev.nix"
         mkdir -p "$out/flutter"
-        git clone "${repo}" "$out/flutter/"
+        git clone -b "${branch}" "${repo}" "$out/flutter/"
         mkdir "$out"/.idx
         cp ${./dev.nix} "$out"/.idx/dev.nix
         install --mode u+rw ${./dev.nix} "$out"/.idx/dev.nix
