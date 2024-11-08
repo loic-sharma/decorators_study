@@ -1,4 +1,4 @@
-{pkgs, branch ? "loic-sharma/decorators", repo ? "https://github.com/loic-sharma/flutter", ...}: {
+{pkgs, branch ? "decorators", repo ? "https://github.com/loic-sharma/flutter", ...}: {
     packages = [
         pkgs.curl
         pkgs.gnutar
