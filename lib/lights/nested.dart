@@ -34,28 +34,30 @@ class _LightsState extends State<Lights> {
         appBar: AppBar(
           title: const Text('Lights'),
         ),
-        body: SizedBox(
-          width: 600,
-          child: Column(
-            spacing: 20,
-            children: [
-              Expanded(
-                child: Center(
-                  child: LightWidget(lights),
+        body: Center(
+          child: SizedBox(
+            width: 600,
+            child: Column(
+              spacing: 20,
+              children: [
+                Expanded(
+                  child: Center(
+                    child: LightWidget(lights),
+                  ),
                 ),
-              ),
-        
-              Text('$lights ${lights == 1 ? 'light' : 'lights'} on'),
-        
-              Slider(
-                min: 1,
-                max: maxLights.toDouble(),
-                value: lights.toDouble(),
-                onChanged: (double value) {
-                  setState(() => lights = value.round());
-                },
-              ),
-            ],
+
+                Text('$lights ${lights == 1 ? 'light' : 'lights'} on'),
+
+                Slider(
+                  min: 1,
+                  max: maxLights.toDouble(),
+                  value: lights.toDouble(),
+                  onChanged: (double value) {
+                    setState(() => lights = value.round());
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
