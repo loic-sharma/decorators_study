@@ -53,7 +53,8 @@ class _LightsState extends State<Lights> {
             ),
           ],
         )
-        .sizedBox(width: 600),
+        .sizedBox(width: 600)
+        .center(),
       ),
     );
   }
