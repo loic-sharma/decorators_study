@@ -22,13 +22,6 @@ class _MyButtonState extends State<MyButton> {
   Widget build(BuildContext context) {
     return Text('Click me')
       .padding(padding: EdgeInsets.all(8))
-      .gestureDetector(
-        onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Button clicked!')),
-          );
-        },
-      )
       .animatedContainer(
         duration: const Duration(milliseconds: 500),
         decoration: BoxDecoration(
@@ -42,6 +35,13 @@ class _MyButtonState extends State<MyButton> {
             ),
           ],
         ),
+      )
+      .gestureDetector(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Button clicked!')),
+          );
+        },
       )
       .center();
   }

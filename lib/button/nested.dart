@@ -21,25 +21,25 @@ class _MyButtonState extends State<MyButton> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 500),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          boxShadow: const <BoxShadow>[
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(5, 5),
-              blurRadius: 5,
-            ),
-          ],
-        ),
-        child: GestureDetector(
-          onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Button clicked!')),
-            );
-          },
+      child: GestureDetector(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Button clicked!')),
+          );
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 500),
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            boxShadow: const <BoxShadow>[
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(5, 5),
+                blurRadius: 5,
+              ),
+            ],
+          ),
           child: Padding(
             padding: EdgeInsets.all(8),
             child: Text('Click me'),
