@@ -50,7 +50,8 @@ class _LightsState extends State<Lights> {
               onChanged: (double value) {
                 setState(() => lights = value.round());
               },
-            ),
+            )
+            .sizedBox(width: 400),
           ],
         )
         .sizedBox(width: 600)
