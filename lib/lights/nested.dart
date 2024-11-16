@@ -48,13 +48,16 @@ class _LightsState extends State<Lights> {
 
                 Text('$lights ${lights == 1 ? 'light' : 'lights'} on'),
 
-                Slider(
-                  min: 1,
-                  max: maxLights.toDouble(),
-                  value: lights.toDouble(),
-                  onChanged: (double value) {
-                    setState(() => lights = value.round());
-                  },
+                SizedBox(
+                  width: 400,
+                  child: Slider(
+                    min: 1,
+                    max: maxLights.toDouble(),
+                    value: lights.toDouble(),
+                    onChanged: (double value) {
+                      setState(() => lights = value.round());
+                    },
+                  ),
                 ),
               ],
             ),
