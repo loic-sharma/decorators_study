@@ -21,6 +21,7 @@ class _MyButtonState extends State<MyButton> {
   @override
   Widget build(BuildContext context) {
     return Text('Click me')
+      .padding(padding: EdgeInsets.all(8))
       .gestureDetector(
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(

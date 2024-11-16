@@ -40,7 +40,10 @@ class _MyButtonState extends State<MyButton> {
               const SnackBar(content: Text('Button clicked!')),
             );
           },
-          child: Text('Click me'),
+          child: Padding(
+            padding: EdgeInsets.all(8),
+            child: Text('Click me'),
+          ),
         ),
       ),
     );
