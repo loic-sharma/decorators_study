@@ -42,7 +42,14 @@ class _MyButtonState extends State<MyButton> {
           ),
           child: Padding(
             padding: EdgeInsets.all(8),
-            child: Text('Click me'),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.home),
+                SizedBox(width: 8),
+                Text('Click me'),
+              ],
+            ),
           ),
         ),
       ),
